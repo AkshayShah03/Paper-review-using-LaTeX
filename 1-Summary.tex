@@ -1,0 +1,42 @@
+\section{Summary}
+Internet of Things (IoT) is a recent communication paradigm that envisions a near future, in which the objects of everyday life will be equipped with microcontrollers, transceivers for digital communication, and suitable protocol stacks that will make them able to communicate with one another and with the users, becoming an integral part of the Internet.
+The objective of this paper is to discuss a general reference framework for the design of an urban IoT.
+
+Smart City Concept and Services:
+The Smart City market is estimated at hundreds of billion dollars by 2020, with an annual spending reaching nearly 16 billions. These astonishing numbers make us believe in the power of innovation and give us confidence to build new technology.
+The most relevant issue consists in the noninteroperability of the heterogeneous technologies currently used in city and urban developments. In this respect, the IoT vision can become the building block to realize a unified urban-scale ICT platform, thus unleashing the potential of the Smart City vision. The variation in current technology can certainly lead to numerous other issues pertaining to the evaluation of change needed.
+
+Concerning the financial dimension, a clear businessmodel is still lacking, although some initiative to fill this gap has been recently undertaken [10]. The situation is worsened by the adverse global economic situation, which has determined a general shrinking of investments on public services. This situation prevents the potentially huge Smart City market from becoming reality. A possible way out of this impasse is to first develop those services that conjugate social utility with very clear return on investment, such as smart parking and smart buildings, and will hence act as catalyzers for the other added-value services.
+
+Some of the services that can have possible IoT intervention in the near future:
+Structural Health of Buildings, Waste Management, Air quality, Noise Monitoring, Traffic Congestion, City Energy Consumption, Smart Parking, Smart Lighting, Automation and Salubrity of Public Buildings.
+
+Urban IoT Architecture : most Smart City services are based on a centralized architecture, where a dense and heterogeneous set of peripheral devices deployed over the urban area generate different types of data that are then delivered through suitable communication technologies to a control center, where data storage and processing are performed.
+Proposed components for an urban IoT system:
+
+https://ieeexplore.ieee.org/mediastore_new/IEEE/content/media/6488907/6810798/6740844/6740844-fig-1-source-large.gif
+
+Link Layer technologies:
+An urban IoT system, requires a set of link layer technologies that can easily cover a wide geographical area and, at the same time, support a possibly large amount of traffic resulting from the aggregation of an extremely high number of smaller data flows. For these reasons, link layer technologies enabling the realization of an urban IoT system are classified into unconstrained and constrained technologies. The first group includes all the traditional LAN, MAN, and WAN communication technologies, such as Ethernet, WiFi, fiber optic, broadband Power Line Communication (PLC), and cellular technologies such as UMTS and LTE. They are generally characterized by high reliability, low latency, and high transfer rates (order of Mbit/s or higher), and due to their inherent complexity and energy consumption are generally not suitable for peripheral IoT nodes.
+
+
+Devices
+We finally describe the devices that are essential to realize an urban IoT, classified based on the position they occupy in the communication flow. Ex: 
+- Backend Servers, Gateways. IoT peripheral nodes
+
+A Case Study: Padova Smart City
+Padova smart city components: https://ieeexplore.ieee.org/mediastore_new/IEEE/content/media/6488907/6810798/6740844/6740844-fig-3-source-large.gif
+Following is the elaboration for the same: 
+
+
+WSN gateway: The gateway has the role of interfacing the constrained link layer technology used in the sensors cloud with traditional WAN technologies used to provide connectivity to the central backend servers. The gateway hence plays the role of 6LoWPAN border router and RPL root node. Furthermore, since sensor nodes do not support CoAP services, the gateway also operates as the sink node for the sensor cloud, collecting all the data that need to be exported to the backend services. The connection to the backend services is provided by common unconstrained communication technologies, optical fiber in this specific example.
+
+Constrained link layer technologies: The IoT nodes mounted on the streetlight poles form a 6LoWPAN multihop cloud, using IEEE 802.15.4 constrained link layer technology. Routing functionalities are provided by the IPv6 Routing Protocol for Low power and Lossy Networks (RPL) [35]. IoT nodes are assigned unique IPv6 addresses, suitably compressed according to the 6LoWPAN standard. Each node can be individually accessible from anywhere in the Internet by means of IPv6/6LoWPAN. Nodes collectively deliver their data to a sink node, which represents the single point of contact for the external nodes. Alternatively, each node might publish its own features and data by running a CoAP server, though this feature is not yet implemented in the testbed. In either case, a gateway is required to bridge the 6LoWPAN cloud to the Internet and perform all the transcoding described in the previous section.
+
+Database server: The database server collects the state of the resources that need to be monitored in time by communicating with the HTTP-CoAP proxy server, which in turn takes care of retrieving the required data from the proper source. The data stored in the database are accessible through traditional web programming technologies. The information can either be visualized in the form of a web site, or exported in any open data format using dynamic web programming languages. In the Padova Smart City network, the database server is realized within the WSN Gateway, which hence represents a plug-and-play module that provides a transparent interface with the peripheral nodes.
+
+
+
+Conclusion:
+
+The conceptualization of basic IoT urban structures was briefed and implementations were anazlyzed.The enabling technologies, furthermore, have reached a level of maturity that allows for the practical realization of IoT solutions and services, starting from field trials that will hopefully help clear the uncertainty that still prevents a massive adoption of the IoT paradigm. An application can be developed in the future using IoT in various household activities in the regular society.
